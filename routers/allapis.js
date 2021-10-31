@@ -50,7 +50,7 @@ router.post("/add-order", async (req, res) => {
 //get all orders by user email api
 
 router.get("/orders", async (req, res) => {
-  if (req.query) {
+  if (req.query.email) {
     const { email } = req.query;
     try {
       const result = await Booking.find({ email });
